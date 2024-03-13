@@ -1,2 +1,2 @@
 # BDBancos
-Branch para producción de la base BANCOS
+Branch para el testing de scripts de la base BANCOS
