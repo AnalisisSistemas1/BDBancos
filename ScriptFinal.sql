@@ -91,7 +91,7 @@ CREATE TABLE BAN_ARCHIVO(
 /****TABLAS PRINCIPALES****/
 CREATE TABLE BAN_NOTAS_CD (
     NCD_NOTAS_CD          NUMERIC GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
-    NCD_TIPO_NOTA         number,
+    NCD_TIPO_NOTA         varchar2(2),
     NCD_NUM_DOC           number,
     NCD_FECHA             date,
     NCD_TOTAL             number,
@@ -99,19 +99,19 @@ CREATE TABLE BAN_NOTAS_CD (
     NCD_NUM_NUEVA_NOTA    number,
     NCD_FECHA_NUEVA       date,
     NCD_TOTAL_NUEVO       number,
-    constraint BAN_NOTAS_CD_NCD_NOTAS_CD_pk primary key
+    CONSTRAINT PK_NCD_NOTAS_CD PRIMARY KEY (NCD_NOTAS_CD)
 );
 
-create table BAN_COMPRA_E (
+CREATE TABLE BAN_COMPRA_E (
     CPE_COMPRA_E             NUMERIC GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) NOT NULL,
-    PFC_PROVEEDOR_FACTURA    number,
+    CPE_PROVEEDOR_FACTURA    number,
     CPE_TOTAL                number,
     CPE_FECHA                date,
-    CPE_CONCEPTO             varchar2(4000 char),
+    CPE_CONCEPTO             varchar2(255),
     CPE_CANTIDAD             number,
     CPE_METODO_PAGO          number,
-    CPE_DESCRIPCION          varchar2(4000 char),
+    CPE_DESCRIPCION          varchar2(500),
     CPE_NUM_COMPRA           number,
-    constraint BAN_COMPRA_E_CPE_COMPRA_E_pk primary key,
-    constraint BAN_COMPRA_E_PFC_PROVEEDOR_FACTURA_fk references table_BAN_PROVEEDOR_FACTURA,
+    CONSTRAINT PK_CPE_COMPRA_E PRIMARY KEY (CPE_COMPRA_E),
+    CONSTRAINT FK_BAN_COMPRA_E_PFC_PROVEEDOR_FACTURA FOREIGN KEY (CPE_PROVEEDOR_FACTURA) REFERENCES BAN_PROVEEDOR_FACTURA (PFC_PROVEEDOR_FACTURA)
 );
