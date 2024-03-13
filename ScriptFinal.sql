@@ -33,8 +33,8 @@ CREATE TABLE BAN_PROVEEDOR (
     PRO_DIRECCION    varchar2(150),
     PRO_NIT          varchar2(15),
     PRO_TELEFONO     number,
-    PRO_CORREO       varchar2(70)
-    CONSTRAINT BAN_PROVEEDOR_PRO_PROVEEDOR_pk primary key
+    PRO_CORREO       varchar2(70),
+    CONSTRAINT PK_PRO_PROVEEDOR PRIMARY KEY (PRO_PROVEEDOR)
 );
 
 
