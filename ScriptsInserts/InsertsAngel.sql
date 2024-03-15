@@ -124,16 +124,15 @@ VALUES (
     2500.00 
 );
 
--- Insertar otro registro en el estado financiero con ID 4
 INSERT INTO BAN_ESTADO_FINANCIERO (ESF_LIBRO_AUX, ESF_ESTADO_C, ESF_TRANSACCION, ESF_TIPO_TRANSACCION, ESF_FECHA, ESF_SALDO, ESF_TIPO_SALDO, ESF_NOMBRE_LIBRO, ESF_BALANCE)
 VALUES (
     (SELECT LAX_LIBRO_AUX FROM BAN_LIBRO_AUX WHERE LAX_FACTURA = 'FACT-003' AND ROWNUM = 1),
     (SELECT ESC_ESTADO_C FROM BAN_ESTADO_C WHERE ESC_DOCUMENTO = 'DOC-789012' AND ROWNUM = 1),
-    4, -- ID de la transacción
-    'Ingreso por ventas', -- Tipo de transacción
-    TO_DATE('2024-03-15', 'YYYY-MM-DD'), -- Fecha de la transacción
-    2500.00, -- Saldo de la transacción
-    'Debito', -- Tipo de saldo
-    'Diaro', -- Nombre del libro
+    4, 
+    'Ingreso por ventas', 
+    TO_DATE('2024-03-15', 'YYYY-MM-DD'),
+    2500.00, 
+    'Debito', 
+    'Diaro', 
     2500.00 
 );
