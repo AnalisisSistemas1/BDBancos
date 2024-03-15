@@ -192,3 +192,136 @@ BEGIN
         );    
    END IF;     
 END;
+
+--PRIMER INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 4;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 4 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            2575.25,
+            TO_DATE('14/03/2024', 'DD/MM/YYYY'),
+            'Toner para impresora',
+            10,
+            1,
+            'Pachas de toner colo negro para impresora HP',
+            2520
+        );    
+   END IF;     
+END;
+
+
+
+--SEGUNDO INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 5;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 5 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            1200.00,
+            TO_DATE('01/03/2024', 'DD/MM/YYYY'),
+            'Toallas para limpiar',
+            6,
+            1,
+            'Toallas de microfibra color amarillo para superficies de mandera o metal',
+            2520
+        );    
+   END IF;     
+END;
+
+
+--TERCER INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 6;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 6 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            5500.00,
+            TO_DATE('02/02/2024', 'DD/MM/YYYY'),
+            'Ventiladores',
+            5,
+            2,
+            'Ventiladores marca X tamano mediano',
+            30021
+        );    
+   END IF;     
+END;
+
+
+
+--CUARTO INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 7;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 7 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            150.75,
+            TO_DATE('09/01/2024', 'DD/MM/YYYY'),
+            'Lapiceros',
+            25,
+            2,
+            'Lapiceros marca BIC color negro',
+            84681968
+        );    
+   END IF;     
+END;
