@@ -1,1 +1,91 @@
 /*REVIVAN EL SEEEERVER*/
+-- PRIMER INSERT 
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    1,
+    74182963,
+    '14/02/2024',
+    525.50,
+    'Descuento no aplicado',
+    123456789,
+    '01/03/2024',
+    550.00
+);
+
+
+
+--SEGUNDO INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    2,
+    963852741,
+    '01/01/2024',
+    1200.00,
+    'Rembolso',
+    025875395,
+    '05/02/2024',
+    1200.00
+);
+
+
+--TERCER INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    1,
+    35715982,
+    '01/03/2024',
+    125.75,
+    'Diferencias en impuestos',
+    15986423,
+    '02/03/2024',
+    110.66
+);
+
+--CUARTO INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    2,
+    05314971,
+    '25/01/2024',
+    2500.00,
+    'Devolucion',
+    79795231,
+    '24/02/2024',
+    2500.00
+);
