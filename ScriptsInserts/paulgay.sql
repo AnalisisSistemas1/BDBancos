@@ -1,4 +1,75 @@
 /*REVIVAN EL SEEEERVER*/
+
+--PRIMER INSERT
+INSERT INTO BAN_PROVEEDOR (
+    PRO_NOMBRE,
+    PRO_DIRECCION,
+    PRO_NIT,
+    PRO_TELEFONO,
+    PRO_CORREO
+)
+VALUES (
+    'Aceros TONCA',
+    '9 calle 45-25',
+    '202314-3',
+    52031478,
+    'info@acerostonca.com'	
+);
+
+
+
+--SEGUNDO INSERT
+INSERT INTO BAN_PROVEEDOR (
+    PRO_NOMBRE,
+    PRO_DIRECCION,
+    PRO_NIT,
+    PRO_TELEFONO,
+    PRO_CORREO
+)
+VALUES (
+    'Metal Madera',
+    '21 calle A, Z12',
+    '74185296-0',
+    54620033,
+    'mm@metalmadera.com'	
+);
+
+
+--TERCER INSERT
+INSERT INTO BAN_PROVEEDOR (
+    PRO_NOMBRE,
+    PRO_DIRECCION,
+    PRO_NIT,
+    PRO_TELEFONO,
+    PRO_CORREO
+)
+VALUES (
+    'SIMPLI',
+    '48-96 Calle B, Z1',
+    '74185296-2',
+    42105896,
+    'simpli@gmail.com'	
+);
+
+
+--CUARTO INSERT
+INSERT INTO BAN_PROVEEDOR (
+    PRO_NOMBRE,
+    PRO_DIRECCION,
+    PRO_NIT,
+    PRO_TELEFONO,
+    PRO_CORREO
+)
+VALUES (
+    'Smart Living',
+    '18-18, 12 Ave, Z10',
+    '8521444-0',
+    20102024,
+    'smart@living.com'	
+);
+
+
+
 -- PRIMER INSERT 
 INSERT INTO BAN_NOTAS_CD (
     NCD_TIPO_NOTA,
@@ -13,7 +84,7 @@ INSERT INTO BAN_NOTAS_CD (
 VALUES (
     1,
     74182963,
-    '14/02/2024',
+    TO_DATE('14/02/2024','YYYY-MM-DD'),
     525.50,
     'Descuento no aplicado',
     123456789,
