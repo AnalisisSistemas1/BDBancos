@@ -52,16 +52,13 @@ VALUES (5, 1006, '2024-03-15', 2050.00, 'Pago de nómina', 'Pagado', 'Sin observ
 /***INSERCIÓN EN LA TABLA BAN_FACTURA***/
 
 INSERT INTO BAN_FACTURA (FAC_FECHA, FAC_CONCEPTO, FAC_NOMBRE, FAC_NIT, FAC_TOTAL, FAC_CANTIDAD, FAC_METODO_PAGO)
-VALUES ('2024-03-05', 'Compra de equipos', 'Empresa XYZ', '987654321', 3500.00, 2, 'Transferencia bancaria');
+VALUES (TO_DATE('2024-03-13', 'YYYY-MM-DD'), 'Compra de equipos', 'Empresa XYZ', '987654321', 3500.00, 2, 'Transferencia bancaria');
 
 INSERT INTO BAN_FACTURA (FAC_FECHA, FAC_CONCEPTO, FAC_NOMBRE, FAC_NIT, FAC_TOTAL, FAC_CANTIDAD, FAC_METODO_PAGO)
-VALUES ('2024-03-03', 'Servicios de consultoría', 'Consultores S.A.', '741258963', 2800.00, 1, 'Cheque');
+VALUES (TO_DATE('2024-03-03','YYYY-MM-DD'), 'Servicios de consultoría', 'Consultores S.A.', '741258963', 2800.00, 1, 'Cheque');
 
 INSERT INTO BAN_FACTURA (FAC_FECHA, FAC_CONCEPTO, FAC_NOMBRE, FAC_NIT, FAC_TOTAL, FAC_CANTIDAD, FAC_METODO_PAGO)
-VALUES ('2024-03-01', 'Compra de mobiliario', 'Muebles & Co.', '369147258', 4500.00, 3, 'Tarjeta de débito');
+VALUES (TO_DATE('2024-03-01','YYYY-MM-DD'), 'Compra de mobiliario', 'Muebles & Co.', '369147258', 4500.00, 3, 'Tarjeta de débito');
 
 INSERT INTO BAN_FACTURA (FAC_FECHA, FAC_CONCEPTO, FAC_NOMBRE, FAC_NIT, FAC_TOTAL, FAC_CANTIDAD, FAC_METODO_PAGO)
-VALUES ('2024-02-28', 'Gastos de mantenimiento', 'Mantenimiento Rápido', '159263487', 1500.00, 1, 'Efectivo');
-
-INSERT INTO BAN_FACTURA (FAC_FECHA, FAC_CONCEPTO, FAC_NOMBRE, FAC_NIT, FAC_TOTAL, FAC_CANTIDAD, FAC_METODO_PAGO)
-VALUES ('2024-02-25', 'Compra de materia prima', 'Proveedores Unidos', '852369741', 3200.00, 4, 'Transferencia bancaria');
+VALUES (TO_DATE('2024-02-28','YYYY-MM-DD'), 'Gastos de mantenimiento', 'Mantenimiento Rápido', '159263487', 1500.00, 1, 'Efectivo');
