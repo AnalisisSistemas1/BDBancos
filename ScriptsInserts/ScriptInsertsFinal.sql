@@ -156,6 +156,9 @@ FROM BAN_DEPARTAMENTO
 WHERE DEP_NOMBRE = 'Departamento de Contabilidad'
 AND ROWNUM = 1;
 
+/*******BAN_LIBRO_AUX********/
+
+
 INSERT INTO BAN_LIBRO_AUX (LAX_BANCO, LAX_DEPARTAMENTO, LAX_FECHA, LAX_MES, LAX_FACTURA, LAX_CONCEPTO, LAX_DEBE, LAX_HABER, LAX_SALDO)
 SELECT BCO_BANCO, DEP_DEPARTAMENTO, TO_DATE('2024-03-14', 'YYYY-MM-DD'), 'Marzo 2024', 'FACT-001', 'Compra de activos', 2000.00, 0.00, 2000.00
 FROM BAN_BANCO, BAN_DEPARTAMENTO
@@ -176,3 +179,317 @@ FROM BAN_BANCO, BAN_DEPARTAMENTO
 WHERE BCO_NOMBRE = 'BANCO AGROMERCANTIL DE GUATEMALA'
 AND DEP_NOMBRE = 'Departamento de Marketing/Ventas'
 AND ROWNUM = 1;
+
+
+/*******BAN_NOTAS_CD ********/
+
+-- PRIMER INSERT 
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    1,
+    74182963,
+    '14/02/2024',
+    525.50,
+    'Descuento no aplicado',
+    123456789,
+    '01/03/2024',
+    550.00
+);
+
+
+
+--SEGUNDO INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    2,
+    963852741,
+    '01/01/2024',
+    1200.00,
+    'Rembolso',
+    025875395,
+    '05/02/2024',
+    1200.00
+);
+
+
+--TERCER INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    1,
+    35715982,
+    '01/03/2024',
+    125.75,
+    'Diferencias en impuestos',
+    15986423,
+    '02/03/2024',
+    110.66
+);
+
+--CUARTO INSERT
+INSERT INTO BAN_NOTAS_CD (
+    NCD_TIPO_NOTA,
+    NCD_NUM_DOC,
+    NCD_FECHA,
+    NCD_TOTAL,
+    NCD_TIPO_ERROR,
+    NCD_NUM_NUEVA_NOTA,
+    NCD_FECHA_NUEVA,
+    NCD_TOTAL_NUEVO
+)
+VALUES (
+    2,
+    05314971,
+    '25/01/2024',
+    2500.00,
+    'Devolucion',
+    79795231,
+    '24/02/2024',
+    2500.00
+);
+
+/*******BAN_COMPRA_E********/
+
+
+--PRIMER INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 4;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 4 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            2575.25,
+            TO_DATE('14/03/2024', 'DD/MM/YYYY'),
+            'Toner para impresora',
+            10,
+            1,
+            'Pachas de toner colo negro para impresora HP',
+            2520
+        );    
+   END IF;     
+END;
+
+
+
+--SEGUNDO INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 3;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 3 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            1200.00,
+            TO_DATE('01/03/2024', 'DD/MM/YYYY'),
+            'Toallas para limpiar',
+            6,
+            1,
+            'Toallas de microfibra color amarillo para superficies de mandera o metal',
+            2520
+        );    
+   END IF;     
+END;
+
+
+--TERCER INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 2;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 2 THEN  -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            5500.00,
+            TO_DATE('02/02/2024', 'DD/MM/YYYY'),
+            'Ventiladores',
+            5,
+            2,
+            'Ventiladores marca X tamano mediano',
+            30021
+        );    
+   END IF;     
+END;
+
+
+
+--CUARTO INSERT
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 1;
+
+    IF TO_NUMBER(v_pfc_proveedor_factura) = 1 then -- Convertimos v_pfc_proveedor_factura a un número
+        INSERT INTO BAN_COMPRA_E (
+            CPE_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            150.75,
+            TO_DATE('09/01/2024', 'DD/MM/YYYY'),
+            'Lapiceros',
+            25,
+            2,
+            'Lapiceros marca BIC color negro',
+            84681968
+        );    
+   END IF;     
+END;
+
+
+/*******BAN_CHEQUE********/
+INSERT INTO BAN_CHEQUE (CTA_NUMERO, CHQ_FECHA, CHQ_BENEFICIARIO, CHQ_MONTO, CHQ_MOTIVO, CHQ_NUM_CHEQUE, CHQ_ESTADO)
+VALUES (2, TO_DATE('2024-03-11','YYYY-MM-DD'), 'Maria Gonzalez', 750.00, 'Pago de alquiler', '456', 'Pendiente');
+
+INSERT INTO BAN_CHEQUE (CTA_NUMERO, CHQ_FECHA, CHQ_BENEFICIARIO, CHQ_MONTO, CHQ_MOTIVO, CHQ_NUM_CHEQUE, CHQ_ESTADO)
+VALUES (3, TO_DATE('2024-03-10','YYYY-MM-DD'), 'Carlos López', 500.00, 'Compra de suministros', '789', 'Pendiente');
+
+INSERT INTO BAN_CHEQUE (CTA_NUMERO, CHQ_FECHA, CHQ_BENEFICIARIO, CHQ_MONTO, CHQ_MOTIVO, CHQ_NUM_CHEQUE, CHQ_ESTADO)
+VALUES (1, TO_DATE('2024-03-09','YYYY-MM-DD'), 'Ana Martínez', 1200.00, 'Pago de servicios', '159', 'Pendiente');
+
+INSERT INTO BAN_CHEQUE (CTA_NUMERO, CHQ_FECHA, CHQ_BENEFICIARIO, CHQ_MONTO, CHQ_MOTIVO, CHQ_NUM_CHEQUE, CHQ_ESTADO)
+VALUES (4, TO_DATE('2024-03-08','YYYY-MM-DD'), 'Pedro Ramirez', 300.00, 'Reembolso de gastos', '357', 'Pendiente');
+
+
+/*******BAN_PAGO_NOMINA********/
+
+INSERT INTO BAN_PAGO_NOMINA (PGN_CTA_NUMERO , PGN_EMPLEADO , PGN_FECHA, PGN_MONTO, PGN_CONCEPTO, PGN_ESTADO_PAGO, PGN_OBSERVACIONES)
+VALUES (2, 1, TO_DATE('2024-03-15','YYYY-MM-DD'), 1800.00, 'Pago de nómina', 'Pagado', 'Sin observaciones');
+
+INSERT INTO BAN_PAGO_NOMINA (PGN_CTA_NUMERO , PGN_EMPLEADO , PGN_FECHA, PGN_MONTO, PGN_CONCEPTO, PGN_ESTADO_PAGO, PGN_OBSERVACIONES)
+VALUES (3, 2, TO_DATE('2024-03-15','YYYY-MM-DD'), 2200.00, 'Pago de nómina', 'Pagado', 'Sin observaciones');
+
+INSERT INTO BAN_PAGO_NOMINA (PGN_CTA_NUMERO , PGN_EMPLEADO , PGN_FECHA, PGN_MONTO, PGN_CONCEPTO, PGN_ESTADO_PAGO, PGN_OBSERVACIONES)
+VALUES (1, 3, TO_DATE('2024-03-15','YYYY-MM-DD'), 2500.00, 'Pago de nómina', 'Pagado', 'Sin observaciones');
+
+INSERT INTO BAN_PAGO_NOMINA (PGN_CTA_NUMERO , PGN_EMPLEADO , PGN_FECHA, PGN_MONTO, PGN_CONCEPTO, PGN_ESTADO_PAGO, PGN_OBSERVACIONES)
+VALUES (4, 4, TO_DATE('2024-03-15','YYYY-MM-DD'), 1900.00, 'Pago de nómina', 'Pagado', 'Sin observaciones');
+
+
+/*******BAN_TRANSFERENCIA********/
+
+INSERT INTO BAN_TRANSFERENCIA 
+(TRA_TIPO_CTA,
+TRA_CTA_DEBITO,
+TRA_CTA_CREDITO,
+TRA_FECHA,
+TRA_TIPO,
+TRA_ESTATUS,
+TRA_NUM_TRANSFERENCIA,
+TRA_EMPLEADO_SOLICITA,
+TRA_EMPLEADO_AUTORIZA,
+TRA_MONTO,
+TRA_COMENTARIO)
+VALUES('DM',
+'4080047204',
+'004080047204',
+TO_DATE('2023-03-14', 'YYYY-MM-DD'),
+'INTERNACIONAL',
+'RECIBIDA',
+'COM 2300256243',
+2,
+1,
+2718.82,
+'06 TRANSF. USD - GTQ');
+
+
+INSERT INTO BAN_TRANSFERENCIA 
+(TRA_TIPO_CTA,
+TRA_CTA_DEBITO,
+TRA_CTA_CREDITO,
+TRA_FECHA,
+TRA_TIPO,
+TRA_ESTATUS,
+TRA_NUM_TRANSFERENCIA,
+TRA_EMPLEADO_SOLICITA,
+TRA_EMPLEADO_AUTORIZA,
+TRA_MONTO,
+TRA_COMENTARIO)
+VALUES('DM',
+'3033001234',
+'GT68AMCN01010000000903721504',
+TO_DATE('2023-03-14', 'YYYY-MM-DD'),
+'ACH',
+'ENVIADA',
+'112015',
+2,
+1,
+20000,
+'INCOMING');
+
+
+
