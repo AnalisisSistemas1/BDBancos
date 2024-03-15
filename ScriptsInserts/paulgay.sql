@@ -172,7 +172,7 @@ BEGIN
     
     IF v_pfc_proveedor_factura = 1 THEN
         INSERT INTO BAN_COMPRA_E (
-            PFC_PROVEEDOR_FACTURA,
+            CPE_PROVEEDOR_FACTURA,
             CPE_TOTAL,
             CPE_FECHA,
             CPE_CONCEPTO,
