@@ -160,3 +160,35 @@ VALUES (
     '24/02/2024',
     2500.00
 );
+
+
+DECLARE 
+    v_pfc_proveedor_factura BAN_PROVEEDOR_FACTURA.PFC_PROVEEDOR_FACTURA%TYPE;
+BEGIN
+    SELECT PFC_PROVEEDOR_FACTURA
+    INTO v_pfc_proveedor_factura
+    FROM BAN_PROVEEDOR_FACTURA
+    WHERE PFC_PROVEEDOR_FACTURA = 1;
+    
+    IF v_pfc_proveedor_factura = 1 THEN
+        INSERT INTO BAN_COMPRA_E (
+            PFC_PROVEEDOR_FACTURA,
+            CPE_TOTAL,
+            CPE_FECHA,
+            CPE_CONCEPTO,
+            CPE_CANTIDAD,
+            CPE_METODO_PAGO,
+            CPE_DESCRIPCION,
+            CPE_NUM_COMPRA
+        ) VALUES (
+            v_pfc_proveedor_factura,
+            2575.25,
+            TO_DATE('14/03/2024', 'DD/MM/YYYY'),
+            'Toner para impresora',
+            10,
+            'Efectivo',
+            'Pachas de toner colo negro para impresora HP',
+            2520
+        );    
+   END IF;     
+END;
